@@ -31,15 +31,25 @@
 			}
 
 			function checkCookie() {
-				var username = getCookie("username");
-				if (username != "") {
-					alert("Welcome again " + username);
-				} else {
-					username = prompt("Please enter your name:", "");
-					if (username != "" && username != null) {
-						setCookie("username", username, 365);
+
+				var visits = [];
+
+				var findingVisits = true;
+				var i = 0;
+				while (findingVisits) {
+					var visitTime = getCookie("visit" + i);
+					if (visitTime != "") {
+						visits.add(visitTime);
+						i++;
+					} else {
+						findingVisits = false;
+						var d = new Date();
+						d.setTime(d.getTime());
+						setCookie("visit" + i, d.toUTCString(), 365);
 					}
 				}
+
+				console.log(visits);
 			}
 
 		</script>
