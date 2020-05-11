@@ -39,7 +39,7 @@
 				while (findingVisits) {
 					var visitTime = getCookie("visit" + i);
 					if (visitTime != "") {
-						visits.add(visitTime);
+						visits.push(visitTime);
 						i++;
 					} else {
 						findingVisits = false;
