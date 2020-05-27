@@ -6,10 +6,17 @@
 
 		<script>
 			
-			function createNewPlantButton() {
+			function createNewPlantElems() {
+				
+				var inputName_elem = document.createElement("input");
+				inputName_elem.id = "inputName";
+				document.body.appendChild(inputName_elem);
+				
 				var button_elem = document.createElement("button");
+				button_elem.id = "newPlantButton";
 				button_elem.innerText = "create a new plant";
 				document.body.appendChild(button_elem);
+				
 			}
 
 			function clearCookie() {
@@ -48,11 +55,11 @@
 				if (plants != "") {
 					console.log("found plants!");
 					// found plants!
-					createNewPlantButton();
+					createNewPlantElems();
 					// or water current plants
 				} else {
 					console.log("no plants found!");
-					createNewPlantButton();
+					createNewPlantElems();
 				}
 
 // 				var findingVisits = true;
