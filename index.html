@@ -38,28 +38,37 @@
 
 			function checkCookie() {
 
-				var visits = [];
-
-				var findingVisits = true;
-				var i = 0;
-				while (findingVisits) {
-					var visitTime = getCookie("visit" + i);
-					if (visitTime != "") {
-						visits.push(visitTime);
-						i++;
-					} else {
-						findingVisits = false;
-						var d = new Date();
-						d.setTime(d.getTime());
-						setCookie("visit" + i, d.toUTCString(), 365);
-					}
+				var plants = getCookie("plants");
+				if (plants != "") {
+					console.log("found plants!");
+					// found plants!
+					// add new plant
+					// or water current plants
+				} else {
+					console.log("no plants found!");
+					// add new plant
 				}
 
-				for (var i = 0; i < visits.length; i++) {
-					var p_elem = document.createElement("p");
-					p_elem.innerText = visits[i];
-					document.body.appendChild(p_elem);
-				}
+// 				var findingVisits = true;
+// 				var i = 0;
+// 				while (findingVisits) {
+// 					var visitTime = getCookie("visit" + i);
+// 					if (visitTime != "") {
+// 						visits.push(visitTime);
+// 						i++;
+// 					} else {
+// 						findingVisits = false;
+// 						var d = new Date();
+// 						d.setTime(d.getTime());
+// 						setCookie("visit" + i, d.toUTCString(), 365);
+// 					}
+// 				}
+
+// 				for (var i = 0; i < visits.length; i++) {
+// 					var p_elem = document.createElement("p");
+// 					p_elem.innerText = visits[i];
+// 					document.body.appendChild(p_elem);
+// 				}
 			}
 
 		</script>
