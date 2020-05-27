@@ -5,6 +5,12 @@
 		<title>Cookie Test</title>
 
 		<script>
+			
+			function createNewPlantButton() {
+				var button_elem = document.createElement("button");
+				button_elem.innerText = "create a new plant";
+				document.body.appendChild(button_elem);
+			}
 
 			function clearCookie() {
 				var allCookies = decodeURIComponent(document.cookie).split(';');
@@ -42,11 +48,11 @@
 				if (plants != "") {
 					console.log("found plants!");
 					// found plants!
-					// add new plant
+					createNewPlantButton();
 					// or water current plants
 				} else {
 					console.log("no plants found!");
-					// add new plant
+					createNewPlantButton();
 				}
 
 // 				var findingVisits = true;
