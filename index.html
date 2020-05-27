@@ -8,8 +8,14 @@
 			
 			function createNewPlantElems() {
 				
+				var inputNameLabel_elem = document.createElement("label");
+				inputNameLabel_elem.for = "inputName";
+				inputNameLabel_elem.innerText = "Plant Name";
+				document.body.appendChild(inputNameLabel_elem);
+				
 				var inputName_elem = document.createElement("input");
 				inputName_elem.id = "inputName";
+				inputName_elem.name = "inputName";
 				document.body.appendChild(inputName_elem);
 				
 				var button_elem = document.createElement("button");
